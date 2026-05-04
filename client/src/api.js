@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "process.env.REACT_APP_API_URL",
+  baseURL: "https://bookingproject-production-a88d.up.railway.app/",
 });
 
 API.interceptors.request.use((req) => {
