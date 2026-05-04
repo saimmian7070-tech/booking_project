@@ -38,7 +38,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000", // local dev
-      "https://your-vercel-app.vercel.app", // 🔥 replace this later
+      "https://booking-project-onqc.vercel.app/", // 🔥 replace this later
     ],
     credentials: true,
   })
