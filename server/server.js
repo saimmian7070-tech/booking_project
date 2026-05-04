@@ -33,27 +33,19 @@ dotenv.config();
 
 const app = express();
 
-// ✅ CORS (allow your Vercel frontend)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000", // local dev
-      "https://booking-project-onqc.vercel.app/", // 🔥 replace this later
-    ],
-    credentials: true,
-  })
-);
+// CORS FIX (safe for dev + production testing)
+app.use(cors({ origin: true }));
 
 app.use(express.json());
 
-// ✅ connect DB
+// DB
 connectDB();
 
-// routes
+// Routes
 app.use("/auth", auth);
 app.use("/bookings", bookings);
 
-// ✅ dynamic port for Railway
+// Port
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
