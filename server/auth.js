@@ -4,13 +4,11 @@ import { generateToken } from "./utils.js";
 
 const router = express.Router();
 
-// REGISTER
 router.post("/register", async (req, res) => {
   const user = await User.create(req.body);
   res.json(user);
 });
 
-// LOGIN
 router.post("/login", async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
 

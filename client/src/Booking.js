@@ -20,8 +20,6 @@ export default function Booking() {
   };
 
   const bookService = async (service) => {
-    // 🔥 HARD FIX (prevents dot issue)
-    console.log("RAW SERVICE:", service);
     const safeService = String(service || "").trim();
 
     if (!safeService) {
@@ -219,7 +217,6 @@ export default function Booking() {
       </div>
 
       <div style={styles.container}>
-        {/* SERVICES */}
         <div style={styles.card}>
           <h3>Select a Service</h3>
 
@@ -268,7 +265,6 @@ export default function Booking() {
           />
         </div>
 
-        {/* BOOKINGS */}
         <div style={styles.card}>
           <h3>Your Bookings</h3>
 

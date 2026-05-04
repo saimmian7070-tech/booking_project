@@ -10,7 +10,6 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  // ✅ EMAIL VALIDATION (REAL-TIME)
   const validateEmail = (value) => {
     setEmail(value);
 
@@ -25,7 +24,6 @@ export default function Register() {
     }
   };
 
-  // ✅ REGISTER FUNCTION
   const register = async () => {
     if (!name.trim() || !email.trim() || !password.trim()) {
       alert("Please fill in all fields.");
@@ -57,7 +55,6 @@ export default function Register() {
     }
   };
 
-  // 🎨 STYLES
   const styles = {
     page: {
       minHeight: "100vh",
@@ -125,7 +122,6 @@ export default function Register() {
       <div style={styles.card}>
         <h2 style={styles.title}>Create Account</h2>
 
-        {/* NAME */}
         <input
           style={styles.input}
           placeholder="Full Name"
@@ -133,7 +129,6 @@ export default function Register() {
           onChange={(e) => setName(e.target.value)}
         />
 
-        {/* EMAIL */}
         <input
           style={{
             ...styles.input,
@@ -151,7 +146,6 @@ export default function Register() {
           </div>
         )}
 
-        {/* PASSWORD */}
         <input
           style={styles.input}
           type="password"
@@ -160,12 +154,10 @@ export default function Register() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* BUTTON */}
         <button style={styles.btn} onClick={register}>
           Register
         </button>
 
-        {/* FOOTER */}
         <div style={styles.footer}>
           Already have an account?
           <span style={styles.link} onClick={() => navigate("/")}>
